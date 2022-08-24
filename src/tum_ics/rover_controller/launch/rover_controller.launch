@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--#>>>>TODO: load the config.yaml gains for M,D,F into the parameter server -->
+  <rosparam file="/home/athomess22/ros/workspaces/tiago_ws/src/tum_ics/rover/launch/config/config.yaml" />
+  <!--#>>>>TODO: execute the rover_node node -->
+  <node name="rover_node" pkg="rover" type="rover_node" output="screen"/>
+  
+  <!--#>>>>TODO: load the config.yaml gains for K_attractor,K_repulsive,K_vortex into the parameter server -->
+  <rosparam file="/home/athomess22/ros/workspaces/tiago_ws/src/tum_ics/rover_controller/launch/config/config.yaml" />
+  <!--#>>>>TODO: execute the rover_controller_node node -->
+  <node name="rover_control_node" pkg="rover_controller" type="rover_controller_node" output="screen"/>
+
+</launch>
